@@ -1,5 +1,5 @@
 const fs = require("fs");
-const productos = require("./products");
+const products = require("./products");
 
 class Container {
     constructor(filename) {

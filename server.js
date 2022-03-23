@@ -17,6 +17,6 @@ app.get("/productoRandom", (req, res)=>{
   contenedor.escribir().then(resp=>res.send(
     resp[Math.floor(Math.random()*resp.length)]
   ))
-})
+});
 
 server.on("error", (error) => console.log(`Error en servidor ${error}`));
