@@ -1,4 +1,4 @@
-const contenedor = require('./controllers/index.js')
+const contenedor = require('./controllers/index')
 
 const express = require("express");
 const app = express();
@@ -10,11 +10,11 @@ const server = app.listen(PORT, () => {
 });
 
 app.get("/productos", (req, res) => {
-  contenedor.escribir().then(resp=>res.send(resp))
+  contenedor.leer().then(resp=>res.send(resp))
 });
 
 app.get("/productoRandom", (req, res)=>{
-  contenedor.escribir().then(resp=>res.send(
+  contenedor.leer().then(resp=>res.send(
     resp[Math.floor(Math.random()*resp.length)]
   ))
 });
