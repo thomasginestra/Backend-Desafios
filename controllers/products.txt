@@ -1,0 +1,1 @@
+[{"nombre":"cafe","precio":"15","thumbnail":"t","id":3},{"nombre":"auris","precio":"1000","thumbnail":"c","id":4},{"nombre":"teclado","precio":"200","thumbnail":"a","id":5}]
