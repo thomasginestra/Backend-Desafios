@@ -12,21 +12,21 @@
     <h2>Agregar producto</h2>
     <form action="/api/productos" method="POST">
         Nombre: <input type="text" name="nombre">
-        Precio: <input type="text" name="precio">
-        Thumbnail: <input type="text" name="thumbnail">
+        Precio: <input type="number" name="precio">
+        Foto url: <input type="url" name="url">
         <input type="submit" value="Agregar producto">
     </form>
-    <h2>Ver todos los productos</h2>
+    <!-- <h2>Ver todos los productos</h2> -->
     <form action="/api/productos" method="GET">
         <input type="submit" value="Ver productos">
     </form>
-    <h2>Modificar por ID</h2>
+    <!-- <h2>Modificar por ID</h2>
     <form action="/api/productos/:id" method="POST">
         ID: <input type="number" name="id">
         Nombre: <input type="text" name="nombre">
         Precio: <input type="text" name="precio">
         Thumbnail: <input type="text" name="thumbnail">
         <input type="submit" value="Modificar producto">  
-    </form>
+    </form> -->
 </body>
 </html>

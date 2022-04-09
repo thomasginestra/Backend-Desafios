@@ -23,38 +23,37 @@ api.use((req, res, next) => {
 
 api.get('/api/productos', (req, res) => {
   productos.getAll().then((result) => {
-    res.send(result)
-  })
-})
-
-api.get('/api/productos/:id', (req, res) => {
-  const id = req.params.id
-  productos.getById(Number(id)).then((result) => {
-    res.send(result || { error: 'Producto no encontrado' })
+    res.render('view', { product: result } || "Productos no encontrados")
   })
 })
 
 api.post('/api/productos', (req, res) => {
   const newObj = req.body
   const newId = productos.save(newObj)
-  res.json(newId)
+  res.redirect('/')
+})
+
+api.get('/api/productos/:id', (req, res) => {
+  const id = req.params.id
+  productos.getById(Number(id)).then((result) => {
+    res.json(result || { error: 'Producto no encontrado' })
+  })
 })
 
 api.put('/api/productos/:id', (req, res) => {
   const newValues = req.body
-  let id;
-  if(req.params.id==":id"){
-    id=req.body.id
-  }else{
-      id=req.params.id
+  let id
+  if (req.params.id == ':id') {
+    id = req.body.id
+  } else {
+    id = req.params.id
   }
-  productos.modifyById(newValues, id)
-  res.send({ obj: 'Producto modificado!' })
+  productos.modifyById(newValues, id).then((e) => (e ? res.json('Producto modificado') : res.json('No se encontró el producto solicitado')))
 })
 
-api.delete('/api/productos/:id', (req,res)=>{
-    const id = req.params.id
-    productos.deleteById(id).then((result)=>{
-        res.send(result || "Hubo un problema al intentar borrar el producto")
-    })
+api.delete('/api/productos/:id', (req, res) => {
+  const id = req.params.id
+  productos.deleteById(id).then((result) => {
+    res.json(result || 'Hubo un problema al intentar borrar el producto')
+  })
 })

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Ejs</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+  </head>
+  <body>
+    <div>
+      <h1>Productos</h1>
+      <% if(product){ %>
+      <div>
+        <table>
+          <tr>
+            <td>Nombre</td>
+            <td>Precio</td>
+            <td>Foto</td>
+          </tr>
+          <% product.forEach((e)=>{ %>
+          <tr>
+            <td><%= e.nombre%></td>
+            <td><%= e.precio%></td>
+            <td><img src=<%= e.url%> alt="" /></td>
+          </tr>
+          <% })%>
+        </table>
+      </div>
+      <% } else{ %>
+      <h3>No hay productos</h3>
+      <% } %>
+      <a href="/" type="button">Volver al menu</a>
+    </div>
+  </body>
+</html>

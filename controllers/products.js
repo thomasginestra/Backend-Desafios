@@ -29,7 +29,7 @@ module.exports = class Container {
         const content = fs.readFileSync(file, 'utf-8')
         return JSON.parse(content)
       } catch {
-        throw new Error('Error pidiendo los datos')
+        // throw new Error('Error pidiendo los datos')
       }
     }
     this.getById = async (id) => {
@@ -53,8 +53,10 @@ module.exports = class Container {
           item.precio = newValues.precio
           item.thumbnail = newValues.thumbnail
           fs.writeFileSync(file, JSON.stringify(parsed))
+          return true
         } else {
-          console.log('No se encontró el producto solicitado')
+          // console.log('No se encontró el producto solicitado')
+          return false
         }
       } catch {
         throw new Error('Error pidiendo los datos')
@@ -69,8 +71,8 @@ module.exports = class Container {
         if (item >= 0) {
           parsed.splice(item, 1)
           fs.writeFileSync(file, JSON.stringify(parsed))
-          return 'Producto eliminado';
-        } else{
+          return 'Producto eliminado'
+        } else {
           return 'Producto inexistente'
         }
       } catch {

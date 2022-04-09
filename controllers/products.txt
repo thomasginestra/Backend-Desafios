@@ -1,1 +1,1 @@
-[{"nombre":"cafe","precio":"15","thumbnail":"t","id":3},{"nombre":"auris","precio":"1000","thumbnail":"c","id":4},{"nombre":"teclado","precio":"200","thumbnail":"a","id":5}]
+[{"nombre":"choco","precio":"123","url":"https://cdn1.iconfinder.com/data/icons/food-5-7/128/Vigor_Chocolate-Bar-Dark-Sweet-Cocoa-Yummy-512.png","id":1}]
