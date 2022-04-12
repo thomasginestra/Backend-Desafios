@@ -1,2 +1,0 @@
-Prefiero hacerlo sin motor de plantillas pero entre los 3 me quedo con EJS.
-Me gusta mucho más la sintaxis, es parecido a PHP que eso me gusta.
