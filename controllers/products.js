@@ -1,6 +1,6 @@
-const fs = require('fs')
+import fs from 'fs'
 
-module.exports = class Container {
+export default class Container {
   constructor(file) {
     this.save = (obj) => {
       try {

@@ -1,32 +1,34 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Page Title</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <script src='main.js'></script>
-</head>
-<body>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/main.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"
+      integrity="sha512-RNLkV3d+aLtfcpEyFG8jRbnWHxUqVZozacROI4J2F1sTaDqo1dPQYs01OMi1t1w9Y2FdbSCDSQ2ZVdAC8bzgAg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="/socket.io/socket.io.js"></script>
+  </head>
+  <body>
     <h2>Agregar producto</h2>
-    <form action="/api/productos" method="POST">
-        Nombre: <input type="text" name="nombre">
-        Precio: <input type="number" name="precio">
-        Foto url: <input type="url" name="url">
-        <input type="submit" value="Agregar producto">
+    <form id="saveProduct" action="/api/productos" method="POST">
+      Nombre: <input type="text" name="nombre" /> Precio: <input type="number" name="precio" /> Foto url: <input type="url" name="url" />
+      <input type="submit" value="Agregar producto" />
     </form>
-    <!-- <h2>Ver todos los productos</h2> -->
-    <form action="/api/productos" method="GET">
-        <input type="submit" value="Ver productos">
+    <div id="products"></div>
+
+    <form id="sendMessage">
+        <h1>Centro de mensajes</h1>
+        <input type="email" id="username" placeholder="Username@mail.com">
+        <div id="messages"></div>
+        <input type="text" id="message" placeholder="Type your message">
+        <input type="submit" value="Enviar">
     </form>
-    <!-- <h2>Modificar por ID</h2>
-    <form action="/api/productos/:id" method="POST">
-        ID: <input type="number" name="id">
-        Nombre: <input type="text" name="nombre">
-        Precio: <input type="text" name="precio">
-        Thumbnail: <input type="text" name="thumbnail">
-        <input type="submit" value="Modificar producto">  
-    </form> -->
-</body>
+    <script src="/js/main.js"></script>
+  </body>
 </html>

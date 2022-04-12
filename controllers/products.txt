@@ -1,1 +1,1 @@
-[{"nombre":"choco","precio":"123","url":"https://cdn1.iconfinder.com/data/icons/food-5-7/128/Vigor_Chocolate-Bar-Dark-Sweet-Cocoa-Yummy-512.png","id":1}]
+[{"nombre":"caca","precio":"1","url":"https://cdn3.iconfinder.com/data/icons/object-emoji/50/Poop-512.png","id":1}]
